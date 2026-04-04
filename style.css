@@ -4,10 +4,29 @@ body {
        */
     font: 100%/1.5 system-ui;
   }
+
+nav {
+    background-color: #E5F3FD;
+    padding: 5px 20px;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+}
+
+nav a:hover {
+    background-color: #D1E5F4;
+    border-radius: 7px;
+  }
+
 img {
     width: 300px;
     height: auto;
 }
+
 /*
 .linkedin-icon {
     width: 10px;
