@@ -2,34 +2,121 @@ body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
        */
-    font: 100%/1.5 system-ui;
+      font: 100%/1.5 system-ui;
+      margin-inline: max(1em, (100% - 100ch) / 2);
+      padding-top: 3.5rem;
+
   }
 
+/*navigation bar*/
 nav {
-    background-color: #E5F3FD;
-    padding: 5px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-nav ul{
-    list-style: none;
-    padding: 0;
+nav {
     display: flex;
-    gap: 50px;
+    background-color: #E5F3FD;
+    margin-bottom: 1em;
+    border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+nav ul, 
+nav li {
+    display: contents;
+}
+
+nav a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
+
+nav a.current {
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  padding-bottom: 0.1em;
 }
 
 nav a:hover {
+    border-bottom: 0.4em solid var(--color-accent);
     background-color: #D1E5F4;
     border-radius: 7px;
-  }
+}
 
+html {
+  --color-accent: skyblue;;
+    accent-color: var(--color-accent);
+}
+
+/*Contact form*/
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+input,
+textarea {
+  grid-column: 2;
+}
+
+button {
+  grid-column: 1 / -1;
+}
+
+/*Projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+
+.projects h2 {
+  margin: 0;
+}
+
+/*Resume*/
+section {
+  padding: 1em;
+  border-radius: 10px;
+  background-color: oklch(98% 2% 200);
+  margin-bottom: 1.5em;
+  border: 1px solid oklch(85% 2% 200);
+}
+
+section:hover {
+  background-color: oklch(95% 3% 200);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+
+/*image*/
 img {
     width: 300px;
     height: auto;
 }
 
-/*
-.linkedin-icon {
-    width: 10px;
-    height: auto;
-}
-*/
