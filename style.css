@@ -111,6 +111,73 @@ button {
   margin: 0;
 }
 
+.project_info {
+    color: gray;
+    font-family: Baskerville, serif;
+    font-variant-numeric: oldstyle-nums;
+}
+
+#projects-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+/* Legend styling */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 0.5em;
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-block: 1em;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 4px;
+  background-color: var(--color);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-block: 2em;
+}
+
+.container svg {
+  flex-shrink: 0;
+}
+
+.container .legend {
+  flex: 1;
+  margin: 0;
+}
+
+/* pie chart hover effects */
+#projects-plot {
+  &:has(path:hover) {
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+}
+
+#projects-plot path {
+  transition: 300ms;
+}
+
+
 /*Resume*/
 section {
   padding: 1em;
