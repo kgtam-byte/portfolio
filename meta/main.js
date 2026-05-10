@@ -231,8 +231,6 @@ function renderScatterPlot(data, commits) {
         .attr('class', 'gridlines')
         .attr('transform', `translate(${usableArea.left}, 0)`);
     
-    createBrushSelector(svg);
-
     // Create gridlines as an axis with no labels and full-width ticks
     gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
@@ -254,6 +252,8 @@ function renderScatterPlot(data, commits) {
         .attr('transform', `translate(${usableArea.left}, 0)`)
         .call(yAxis);
     
+    createBrushSelector(svg);
+
     
   }
   
